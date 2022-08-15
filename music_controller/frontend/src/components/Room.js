@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useParams } from "react-router-dom";
 
 
 export default class Room extends Component {
@@ -9,18 +10,18 @@ export default class Room extends Component {
             guestCanPasuse: false,
             isHost: false,
         };
-        this.roomCode = this.props.match.params.roomCode;
+        // this.roomCode = this.props.match.params.roomCode;
+        const { roomCode } = useParams();
     }
 
 
     render() {
         return  (
             <div>
-                <p>Test</p>
-                {/* <h3>{this.roomCode}</h3> */}
-                {/* <p>Votes: {this.state.voteToSkip}</p>
+                <h3>{this.roomCode}</h3>
+                <p>Votes: {this.state.voteToSkip}</p>
                 <p>Guest Can Pause: {this.state.guestCanPasuse}</p>
-                <p>Host: {this.state.isHost}</p> */}
+                <p>Host: {this.state.isHost}</p>
             </div>
         );
     }
