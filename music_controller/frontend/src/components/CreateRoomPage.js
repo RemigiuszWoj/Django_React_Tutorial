@@ -12,6 +12,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default class CreateRoomPage extends Component {
     defaultVotes = 2;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -32,20 +33,22 @@ export default class CreateRoomPage extends Component {
 
     handleGuestCanPauseChange(e) {
         this.setState({
-            guestCanPause: e.target.value ==='true' ? true : false,
+            guestCanPause: e.target.value === "true" ? true : false,
         });
     }
 
     handleRoomButtonPress() {
         const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Tepe': 'application/json' },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                votes_to_skip: this.votesToSkip,
-                guest_can_pause: this.guestCanPause,
+                votes_to_skip: this.state.votesToSkip,
+                guest_can_pause: this.state.guestCanPause,
             }),
         };
-        fetch('/api/create-room', requestOptions).then((response) => response.json()).then((data) => console.log(data));
+        fetch("/api/create-room", requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
     }
 
     render() {
@@ -60,7 +63,7 @@ export default class CreateRoomPage extends Component {
                 <FormHelperText>
                     <div align="center">Guest Control of Playback State</div>
                 </FormHelperText>
-                <RadioGroup row defaultValue={"True"} onChange={this.handleGuestCanPauseChange} >
+                <RadioGroup row defaultValue={"true"} onChange={this.handleGuestCanPauseChange} >
                     <FormControlLabel
                         value="true"
                         control={<Radio color="primary" />}
