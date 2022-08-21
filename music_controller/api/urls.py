@@ -6,11 +6,11 @@ urlpatterns = [
 ]
 
 from django.urls import path
-from .views import RoomView, CreateRoomViev, GetRoom
+from .views import RoomView, CreateRoomViev, GetRoom, JoinRoom
 
 urlpatterns = [
     path('room', RoomView.as_view()),
     path('create-room', CreateRoomViev.as_view()),
     path('get-room', GetRoom.as_view()),
-
+    path('join-room', JoinRoom.as_view()),
     ]
