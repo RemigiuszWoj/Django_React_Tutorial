@@ -10,7 +10,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Collapse } from "@mui/material";
-import { Alert } from "@mui/lab"
+import { Alert } from "@mui/material"
 
 export default class CreateRoomPage extends Component {
     static defaultProps = {
