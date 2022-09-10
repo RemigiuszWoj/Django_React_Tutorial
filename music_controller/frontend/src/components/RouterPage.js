@@ -11,6 +11,8 @@ import {
     Redirect,
   } from "react-router-dom";
 import { TextField, Button,ButtonGroup, Grid, Typography } from "@mui/material";
+import Info from "./Info";
+
 export default class RouterPage extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +45,9 @@ export default class RouterPage extends Component {
             <Button color="primary" to="/join" component={Link}>
               Join a Room
             </Button>
+            <Button color="success" to="/info" component={Link}>
+              Info
+            </Button>
             <Button color="secondary" to="/create" component={Link}>
               Create a Room
             </Button>
@@ -74,6 +79,7 @@ render() {
                 }}
               />
           <Route path="/join" component={RoomJoinPage} />
+          <Route path="/info" component={Info} />
           <Route path="/create" component={CreateRoomPage} />
           <Route
             path="/room/:roomCode"
